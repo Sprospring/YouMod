@@ -36,3 +36,6 @@ Up to the latest, this is the goal of this tweak. Any versions starting from 19.
 5. On your fork repository, click **Contribute** button to create a new pull request (PR) from your branch.
     - In the PR description, reference the issue you're addressing (e.g., "Closes #123", I found this issue from ..., Update this workflow to ... , Update this language localizations) and send screenshots or videos proving your codes work without any issues (Only send this if you are not modifying the localizations).
     - Once your PR is submitted, maintainers or collaborators may review it and ask for changes or feedback. Make any necessary adjustments, and respond to comments as needed.
+
+## License
+This project uses GPLv3 license. See [LICENSE](https://github.com/Tonwalter888/YouMod/blob/main/LICENSE) for more details.
