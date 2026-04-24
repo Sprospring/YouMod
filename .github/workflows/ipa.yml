@@ -32,12 +32,6 @@ on:
         required: false
         type: boolean
 
-      ytclassic:
-        description: "Integrate YTClassicVideoQuality"
-        default: true
-        required: false
-        type: boolean
-
       # volboost:
       #   description: "Integrate VolumeBoostYT (Require iOS 16+)"
       #   default: true
@@ -190,10 +184,6 @@ jobs:
       - name: Clone YouTube-X
         run: git clone --quiet --depth=1 https://github.com/PoomSmart/YouTube-X.git
 
-      - name: Clone YTClassicVideoQuality
-        if: ${{ inputs.ytclassic }}
-        run: git clone --quiet --depth=1 https://github.com/PoomSmart/YTClassicVideoQuality.git
-
       #- name: Clone iSponsorBlock
       #  run: git clone --quiet --depth=1 https://github.com/Galactic-Dev/iSponsorBlock.git
 
@@ -345,13 +335,6 @@ jobs:
           cd NoYTPremium
           make clean package DEBUG=0 FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless
           mv packages/*.deb ${{ github.workspace }}/noytpre.deb
-
-      - name: Build YTClassicVideoQuality
-        if: ${{ inputs.ytclassic }}
-        run: |
-          cd YTClassicVideoQuality
-          make clean package DEBUG=0 FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless
-          mv packages/*.deb ${{ github.workspace }}/ytclassic.deb
 
       #- name: Build iSponsorBlock
       #  run: |
