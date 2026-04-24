@@ -215,8 +215,11 @@
 // Disable toggle time remaining - @bhackel
 %hook YTInlinePlayerBarContainerView
 - (void)setShouldDisplayTimeRemaining:(BOOL)arg1 { 
-    if (IS_ENABLED(DisablesShowRemaining)) return;
-    IS_ENABLED(AlwaysShowRemaining) ? %orig(YES) : %orig(NO);
+    if (IS_ENABLED(DisablesShowRemaining)) {
+        %orig(NO);
+        return;
+    }
+    IS_ENABLED(AlwaysShowRemaining) ? %orig(YES) : %orig;
 }
 %end
 
